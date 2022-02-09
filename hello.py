@@ -101,12 +101,31 @@
 # g=h
 # h +=(4,5)
 # print(h) #(1, 2, 3, 4, 5)
-# print(g) #(1, 2, 3) в отличие от списка кортеж не перезаписывается
+# print(g) #(1, 2, 3) #в отличие от списка кортеж не перезаписывается
 
 
 #практическое задание
+# import os
+# for i in os.walk('C:\\Users\sultan.karimov\Desktop\Для примера'):
+#     print(i) # ('C:\\Users\\sultan.karimov\\Desktop\\Для примера',  ['Albania', 'Algeria'], ['FAOR.xlsx', 'FASZ.xlsx'])
 
-import os
-for i in os.walk('C:\\Users\sultan.karimov\Desktop\test3') :
-    print(i)
- 
+#практическое задание modified
+# import os
+# ('C:\\Users\\sultan.karimov\\Desktop\\Для примера',  ['Albania', 'Algeria'], ['FAOR.xlsx', 'FASZ.xlsx'])
+# spisok = []
+# for address, dirs, files in os.walk('C:\\Users\sultan.karimov\Desktop\Для примера'):
+#     spisok.append(address)
+# print(spisok) #['C:\\Users\\sultan.karimov\\Desktop\\Для примера', 'C:\\Users\\sultan.karimov\\Desktop\\Для примера\\Albania', 'C:\\Users\\sultan.karimov\\Desktop\\Для примера\\Algeria']
+  
+
+#практическое задание modified hard
+# import os
+# import time
+# spisok = []
+# for address, dirs, files in os.walk('C:\\Users\sultan.karimov\Desktop\Для примера'):
+#     for file in files:
+#         full = os.path.join(address, file)
+#         #if '.xlsx' in full: #если формат xlsx то закидываем в список
+#         if time.time() - os.path.getctime(full) < 86400: #если разница между текущим врменем и созданием файлов в папке Для примера меньше 24 часов или 86400 секунд, то закидываем их в список
+#             spisok.append(full)
+# print(spisok) # ['C:\\Users\\sultan.karimov\\Desktop\\Для примера\\FAOR.xlsx', 'C:\\Users\\sultan.karimov\\Desktop\\Для примера\\FASZ.xlsx', 'C:\\Users\\sultan.karimov\\Desktop\\Для примера\\Albania\\LATI.xlsx', 'C:\\Users\\sultan.karimov\\Desktop\\Для примера\\Algeria\\DAAG.xlsx']
