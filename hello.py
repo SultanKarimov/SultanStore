@@ -109,4 +109,4 @@
 import os
 for i in os.walk('C:\\Users\sultan.karimov\Desktop\test3') :
     print(i)
-    break
+ 
